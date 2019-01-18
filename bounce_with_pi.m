@@ -24,13 +24,13 @@ for i=1:(floor(sqrt(m2)*pi)+100); % this indicates already the answer, the 100 i
     if mod(i,2)
         tcol_mass=(x2-x1)/(v1b-v2b);
         dt  = tcol_mass;
-        v1a = (m1-m2)/(m1+m2)*v1b + 2*m2/(m1+m2)*v2b; % v1 after elastic collission
-        v2a = (m2-m1)/(m1+m2)*v2b + 2*m1/(m1+m2)*v1b; % v2 after elastic collission
+        v1a = (m1-m2)/(m1+m2)*v1b + 2*m2/(m1+m2)*v2b; % v1 after elastic collision
+        v2a = (m2-m1)/(m1+m2)*v2b + 2*m1/(m1+m2)*v1b; % v2 after elastic collision
     else
         tcol_wall = (0-x1)/v1b;
         dt  =  tcol_wall;
-        v1a = -v1a; % v1 after elastic collission
-        v2a =  v2b; % v2 after elastic collission
+        v1a = -v1a; % v1 after elastic collision
+        v2a =  v2b; % v2 after elastic collision
     end
     x1 = x1 +v1b*dt;
     x2 = x2 +v2b*dt;
